@@ -1,0 +1,19 @@
+{
+  "buildCommand": "nx build test",
+  "builds": [
+    {
+      "src": "dist/test/main.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "dist/test/main.js",
+      "methods": [
+        "GET",
+        "POST"
+      ]
+    }
+  ]
+}
